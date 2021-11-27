@@ -22,4 +22,7 @@ module.exports = {
 			vaderEthUniV2Pool: '0x452c60e1e3ae0965cd27db1c7b3a525d197ca0aa',
 		},
 	},
+	api: {
+		theGraphUri: 'https://api.thegraph.com/subgraphs/name/satoshi-naoki/vader-protocol-mainnet',
+	},
 }
