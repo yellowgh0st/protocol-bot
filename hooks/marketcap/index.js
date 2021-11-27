@@ -19,7 +19,7 @@ module.exports = async (client) => {
 
 			const circulating = await vaderCirculating()
 			const mcap = await prettifyNumber((circulating * uniswapV2Market.vader.usdc), 0, 2)
-			const announce = `<:vaderfire:908728100651675719> **$VADER** current market capitalization is *USDC* **${mcap}**`
+			const announce = `<:vadersymbolwring:914298664741130240> **$VADER** current market capitalization is *USDC* **${mcap}**`
 	
 			if(announce) {
 				await message.channel.send(announce)
