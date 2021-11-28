@@ -2,6 +2,11 @@ require('dotenv').config()
 const { ethers } = require('ethers')
 
 module.exports = {
+	bot: {
+		versionPreFix: 'alpha',
+		version: '0.1',
+		versionSuffix: 'c',
+	},
 	network: {
 		provider: new ethers.providers.FallbackProvider(
 			[
