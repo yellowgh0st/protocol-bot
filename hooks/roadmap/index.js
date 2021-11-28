@@ -3,7 +3,7 @@ module.exports = {
 	init: async (client) => {
 
 		const sendRoadMapToChannel = async (message) => {
-			const announce = `<:vaderfire:908728100651675719> /▼皿▼\  **VADER's ROADMAP**  /▼皿▼\ <:vaderfire:908728100651675719>\n
+			const announce = `<:vaderfire:908728100651675719> /▼皿▼\  **VADER's ROADMAP**  /▼皿▼\<:vaderfire:908728100651675719>\n
 	📒 **Q4 2021**:
 	📌 Audits Completed
 	📌 VADER token listing
