@@ -9,12 +9,18 @@ module.exports = {
 			try {
 					const txt = fs.readFileSync(path.join(__dirname, '../../memories/txt/wen1s'), 'utf-8')
 					const quotes = txt.split('\n')
-					const n = Math.floor(Math.random() * quotes.length)
-					await message.channel.send(`**${quotes[n]}**`, {
-						files: [
-							'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/jpg/FFPMoRWVkAEBa65.jpg'
-						]
+					const t = Math.floor(Math.random() * quotes.length)
+
+					const files = [
+						'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/jpg/FFPMoRWVkAEBa65.jpg',
+						'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/jpg/202111289.jpg',
+					]
+					const p = Math.floor(Math.random() * files.length)
+
+					await message.channel.send(`**${quotes[t]}**`, {
+						files: [ files[p] ],
 					})
+
 			}
 			catch (err) {
 				console.log(err)
