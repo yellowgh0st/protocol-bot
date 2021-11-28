@@ -21,7 +21,7 @@ module.exports = {
 						'dai': Number(await uniswapV2Price(defaults.network.address.daiEthUniV2Pool)).toFixed(2),
 					},
 					'vader': {
-						'weth': (await uniswapV2Price(defaults.network.address.vaderEthUniV2Pool, true)).toFixed(10),
+						'weth': Number(await uniswapV2Price(defaults.network.address.vaderEthUniV2Pool, true)).toFixed(10),
 						'usdc': (await uniswapV2Price(defaults.network.address.vaderEthUniV2Pool, true) *
 							Number(await uniswapV2Price(defaults.network.address.usdcEthUniV2Pool) *
 								1000000000000).toFixed(2)).toFixed(6).replace(regExp),
