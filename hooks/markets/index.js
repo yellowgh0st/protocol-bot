@@ -43,7 +43,7 @@ module.exports = {
 	
 		try {
 			client.on('message', (message) => {
-				if (message.channel.name === 'markets') {
+				if (message.channel.id === '914269877848637451') {
 					switch (message.content) {
 						case '.': sendPriceToChannel(message); break
 						case '!price': sendPriceToChannel(message); break
