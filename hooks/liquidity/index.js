@@ -45,6 +45,7 @@ module.exports = {
 			client.on('message', (message) => {
 				switch (message.content) {
 					case '!liquidity': sendLiquidityToChannel(message); break
+					case '!liq': sendLiquidityToChannel(message)
 				}
 			})
 			console.log('Liquidity hook initiated')
