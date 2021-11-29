@@ -28,7 +28,7 @@ module.exports = {
 				}
 		
 				switch (exchange) {
-					case 'uniswap': announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}**`; break
+					case 'uniswap': announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}** [Open](https://uniswap.exchange/swap/0x2602278EE1882889B946eb11DC0E810075650983)`; break
 					default: announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}**`
 				}
 		
