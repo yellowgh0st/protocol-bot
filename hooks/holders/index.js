@@ -1,14 +1,14 @@
-const vaderCirculating = require('../../skills/vaderCirculating')
+const vaderHolders = require('../../skills/vaderHolders')
 const prettifyNumber = require('../../core/prettifyNumber')
 
 module.exports = {
 	priority: 0,
 	init: async (client) => {
 	
-		const sendCircToChannel = async (message) => {
+		const sendHoldersToChannel = async (message) => {
 			try {
-				const holders = await prettifyNumber(await vaderHolders(), 0, 5)
-				const announce = `<:vadersymbolwring:914298664741130240> **${circulating}** **holders** of **$VADER** has strong hands.`
+				const holders = await prettifyNumber(await vaderHolders(), 0, 0)
+				const announce = `<:vadersymbolwring:914298664741130240> **${holders}** **holders** of **$VADER** has strong hands.`
 				if(announce) {
 					await message.channel.send(announce)
 				}
@@ -21,16 +21,14 @@ module.exports = {
 		try {
 			client.on('message', (message) => {
 				switch (message.content) {
-					case '!mcap': sendMcapToChannel(message); break
-					case '!circulation': sendCircToChannel(message); break
-					case '!circ': sendCircToChannel(message); break
-					case '!marketcap': sendMcapToChannel(message)
+					case '!holders': sendHoldersToChannel(message); break
+					case '!hands': sendHoldersToChannel(message)
 				}
 			})
-			console.log('MarketCap hook initiated')
+			console.log('Holders hook initiated')
 		}
 		catch (err) {
-			console.log('MarketCap hook initialization failed')
+			console.log('Holders hook initialization failed')
 			console.log(err)
 		}
 	

@@ -1,11 +1,10 @@
 const defaults = require('../../core/defaults')
 const queryGraphQL = require('../../core/queryGraphQL')
-const { utils } = require('ethers')
 
  module.exports = async () => {
 	const query = `
-		query {
-			global(id: "circulatingSupply") {
+		{
+			global(id: "UniqueWallet_${defaults.network.address.vader}") {
 				value
 			}
 		}
@@ -13,7 +12,7 @@ const { utils } = require('ethers')
 	try {
 		const result = await queryGraphQL(query, defaults.api.theGraphUri)
 		if (result) {
-			return utils.formatUnits(result.global.value, 18)
+			return result.global.value
 		}
 	}
 	catch (err) {
