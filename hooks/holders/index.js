@@ -8,7 +8,7 @@ module.exports = {
 		const sendHoldersToChannel = async (message) => {
 			try {
 				const holders = await prettifyNumber(await vaderHolders(), 0, 0)
-				const announce = `<:vadersymbolwring:914298664741130240> **${holders}** **holders** of **$VADER** has strong hands.`
+				const announce = `<:vadersymbolwring:914298664741130240> **${holders}** **holders** of **$VADER** have strong hands.`
 				if(announce) {
 					await message.channel.send(announce)
 				}
