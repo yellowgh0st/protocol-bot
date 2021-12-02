@@ -1,10 +1,10 @@
 const defaults = require('../../core/defaults')
 const queryGraphQL = require('../../core/queryGraphQL')
 
- module.exports = async () => {
+ module.exports = async (address) => {
 	const query = `
 		{
-			global(id: "UniqueWallet_${defaults.network.address.vader}") {
+			global(id: "UniqueWallet_${address}") {
 				value
 			}
 		}
@@ -12,7 +12,7 @@ const queryGraphQL = require('../../core/queryGraphQL')
 	try {
 		const result = await queryGraphQL(query, defaults.api.theGraphUri)
 		if (result) {
-			return result.global.value
+			return result?.global?.value
 		}
 	}
 	catch (err) {

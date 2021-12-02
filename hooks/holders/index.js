@@ -1,4 +1,5 @@
 const vaderHolders = require('../../skills/vaderHolders')
+const defaults = require('../../core/defaults')
 const prettifyNumber = require('../../core/prettifyNumber')
 
 module.exports = {
@@ -7,8 +8,9 @@ module.exports = {
 	
 		const sendHoldersToChannel = async (message) => {
 			try {
-				const holders = await prettifyNumber(await vaderHolders(), 0, 0)
-				const announce = `<:vadersymbolwring:914298664741130240> **${holders}** **holders** of **$VADER** have strong hands.`
+				const vader = !(await prettifyNumber(await vaderHolders(defaults.network.address.vader), 0, 0)) ? '0' : await prettifyNumber(await vaderHolders(defaults.network.address.vader), 0, 0)
+				const xvader = !(await prettifyNumber(await vaderHolders(defaults.network.address.xvader), 0, 0)) ? '0' : await prettifyNumber(await vaderHolders(defaults.network.address.xvader), 0, 0)
+				const announce = `<:vadersymbolwring:914298664741130240> **${vader}** **holders** of **$VADER** have strong hands.\n<:xvadersymbolwring:915963976892944464> **${xvader}** **holders** of **$xVADER** are earning extra.`
 				if(announce) {
 					await message.channel.send(announce)
 				}
