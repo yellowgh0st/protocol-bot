@@ -30,6 +30,8 @@ module.exports = {
 		},
 	},
 	api: {
+		// ttl in seconds
+		ttl: 120,
 		theGraphUri: 'https://api.thegraph.com/subgraphs/name/satoshi-naoki/vader-protocol-mainnet',
 		uniswapV2Uri: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
 	},

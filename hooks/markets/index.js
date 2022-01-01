@@ -2,6 +2,7 @@
 const uniswapV2Price = require('../../skills/uniswapV2Price')
 const defaults = require('../../core/defaults')
 const mexcTicker = require('../../skills/mexcTicker')
+const poloniexTicker = require('../../skills/poloniexTicker')
 const prettifyNumber = require('../../core/prettifyNumber')
 
 module.exports = {
@@ -30,11 +31,23 @@ module.exports = {
 				}
 
 				const mexcMarket = await mexcTicker('VADER_USDT')
-		
+				const poloniexMarket = {
+					'eth': {
+						'usdt': await poloniexTicker('USDT_ETH'),
+					},
+					'vader': {
+						'usdt': await poloniexTicker('USDT_VADER'),
+					},
+					'usdt': {
+						'dai': await poloniexTicker('USDT_DAI')
+					}
+				}
+
 				switch (exchange) {
 					case 'uniswap': announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}**`; break
-					case 'mexc': announce = `<:mxc:917129131244789781> MEXC Global **$VADER** price is at *USDT* **${await prettifyNumber(mexcMarket?.data?.[0]?.last, 0, 6)}**`; break
-					default: announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}**\n<:mxc:917129131244789781> MEXC Global **$VADER** price is at *USDT* **${await prettifyNumber(mexcMarket?.data?.[0]?.last, 0, 6)}**`
+					case 'mexc': announce = `<:mxc:917129131244789781> MEXC Global **$VADER** price is at *USDT* **${await prettifyNumber(mexcMarket?.data?.[0]?.last, 0, 5)}**`; break
+					case 'poloniex': announce = `<:poloniex:925869327608070186> Poloniex **$VADER** price is at *USDT* **${await prettifyNumber(poloniexMarket.vader.usdt['last'], 0, 5)}**, *DAI* **${await prettifyNumber(Number(Number(poloniexMarket.vader.usdt['last']) * Number(poloniexMarket.usdt.dai['last'])), 0, 5)}**, *Ξ* **${await prettifyNumber(Number(Number(poloniexMarket.vader.usdt['last']) / Number(poloniexMarket.eth.usdt['last'])), 0, 10)}**`; break
+					default: announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** price is at *USDC* **${uniswapV2Market.vader.usdc}**, *DAI* **${uniswapV2Market.vader.dai}**, *Ξ* **${uniswapV2Market.vader.weth}**\n<:mxc:917129131244789781> MEXC Global **$VADER** price is at *USDT* **${await prettifyNumber(mexcMarket?.data?.[0]?.last, 0, 5)}**\n<:poloniex:925869327608070186> Poloniex **$VADER** price is at *USDT* **${await prettifyNumber(poloniexMarket.vader.usdt['last'], 0, 5)}**, *DAI* **${await prettifyNumber(Number(Number(poloniexMarket.vader.usdt['last']) * Number(poloniexMarket.usdt.dai['last'])), 0, 5)}**, *Ξ* **${await prettifyNumber(Number(Number(poloniexMarket.vader.usdt['last']) / Number(poloniexMarket.eth.usdt['last'])), 0, 10)}**`
 				}
 		
 				if(announce) {
@@ -51,8 +64,8 @@ module.exports = {
 				if (message.channel.id === '914269877848637451') {
 					switch (message.content) {
 						case '.': sendPriceToChannel(message); break
-						case '!price': sendPriceToChannel(message); break
 						case '!uniswap': sendPriceToChannel(message, 'uniswap'); break
+						case '!poloniex': sendPriceToChannel(message, 'poloniex'); break
 						case '!mexc': sendPriceToChannel(message, 'mexc')
 					}
 				}
@@ -60,6 +73,7 @@ module.exports = {
 					switch (message.content) {
 						case '!price': sendPriceToChannel(message); break
 						case '!uniswap': sendPriceToChannel(message, 'uniswap'); break
+						case '!poloniex': sendPriceToChannel(message, 'poloniex'); break
 						case '!mexc': sendPriceToChannel(message, 'mexc')
 					}
 				}
