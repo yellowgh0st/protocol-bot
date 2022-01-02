@@ -91,7 +91,8 @@ module.exports = {
 						case '.': sendPriceToChannel(message); break
 						case '!uniswap': sendPriceToChannel(message, 'uniswap'); break
 						case '!poloniex': sendPriceToChannel(message, 'poloniex'); break
-						case '!mexc': sendPriceToChannel(message, 'mexc')
+						case '!mexc': sendPriceToChannel(message, 'mexc'); break
+						case '!gateio': sendPriceToChannel(message, 'gateio')
 					}
 				}
 				else {
@@ -99,7 +100,8 @@ module.exports = {
 						case '!price': sendPriceToChannel(message); break
 						case '!uniswap': sendPriceToChannel(message, 'uniswap'); break
 						case '!poloniex': sendPriceToChannel(message, 'poloniex'); break
-						case '!mexc': sendPriceToChannel(message, 'mexc')
+						case '!mexc': sendPriceToChannel(message, 'mexc'); break
+						case '!gateio': sendPriceToChannel(message, 'gateio')
 					}
 				}
 			})
