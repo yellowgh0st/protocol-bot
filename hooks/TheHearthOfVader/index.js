@@ -14,6 +14,7 @@ module.exports = {
 					const files = [
 						'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/jpg/FFPMoRWVkAEBa65.jpg',
 						'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/jpg/202111289.jpg',
+						'https://raw.githubusercontent.com/yellowgh0st/protocol-bot/main/memories/png/924254814202912788.png'
 					]
 					const p = Math.floor(Math.random() * files.length)
 
