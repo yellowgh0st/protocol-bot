@@ -4,13 +4,9 @@ module.exports = {
 
 		const sendRoadMapToChannel = async (message) => {
 			const announce = `<:vaderfire:908728100651675719> /▼皿▼\  **VADER's ROADMAP**  /▼皿▼\<:vaderfire:908728100651675719>\n
-	📒 **Q4 2021**:
-	📌 Audits Completed
+	📒 **Q1 2022**:
 	📌 VADER token listing
 	📌 USDV minting and Single Side Staking for USDv and VADER AMM Protocol Launch
-	📌 Bond Sales for Long term Protocol Owned Liquidity
-	
-	📒 **Q1 2022**:
 	📌 USDV partnership integrations
 	📌 Collateral Debt Leveraged Positions
 	📌 Crosschain Deployments
