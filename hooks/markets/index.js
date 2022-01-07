@@ -89,6 +89,7 @@ module.exports = {
 				if (message.channel.id === '914269877848637451') {
 					switch (message.content) {
 						case '.': sendPriceToChannel(message); break
+						case '!price': sendPriceToChannel(message); break
 						case '!uniswap': sendPriceToChannel(message, 'uniswap'); break
 						case '!poloniex': sendPriceToChannel(message, 'poloniex'); break
 						case '!mexc': sendPriceToChannel(message, 'mexc'); break
