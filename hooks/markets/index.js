@@ -96,6 +96,9 @@ module.exports = {
 						case '!gateio': sendPriceToChannel(message, 'gateio')
 					}
 				}
+				else if (message.channel.id === '913708840464293938') {
+						// do nothing
+				}
 				else {
 					switch (message.content) {
 						case '!price': sendPriceToChannel(message); break
