@@ -28,6 +28,8 @@ module.exports = {
 			usdcEthUniV2Pool: '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc',
 			daiEthUniV2Pool: '0xa478c2975ab1ea89e8196811f51a7b7ade33eb11',
 			vaderEthUniV2Pool: '0x452c60e1e3ae0965cd27db1c7b3a525d197ca0aa',
+			usdv3crvf: '0x7abD51BbA7f9F6Ae87aC77e1eA1C5783adA56e5c',
+			crv3pool: '0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7',
 		},
 	},
 	api: {
