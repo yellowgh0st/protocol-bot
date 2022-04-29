@@ -10,7 +10,7 @@ module.exports = {
 		const sendPrincipalPriceToChannel = async (message) => {
 			try {
 				const price = await uniswapV2PrincipalPrice(defaults.network.address.vaderEthUniV2Pool)
-				const announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** / **ETH** **LP token** price is at *Ξ* **${await prettifyNumber(price?.[0]?.principalPrice, 0, 18)}**`
+				const announce = `<:uniswap:718587420274196553> Uniswap V2 **$VADER** / **ETH** **LP token** price is at *Ξ* **${prettifyNumber(price?.[0]?.principalPrice, 0, 18)}**`
 				if(announce) {
 					await message.channel.send(announce)
 				}
