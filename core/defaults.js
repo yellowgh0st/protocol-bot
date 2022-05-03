@@ -37,5 +37,6 @@ module.exports = {
 		ttl: 120,
 		theGraphUri: 'https://api.thegraph.com/subgraphs/name/satoshi-naoki/vader-protocol-mainnet',
 		uniswapV2Uri: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
+		usdvUri: 'https://api.thegraph.com/subgraphs/name/satoshi-naoki/vader-protocol-mainnet-usdv',
 	},
 }

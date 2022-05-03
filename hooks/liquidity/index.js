@@ -24,12 +24,12 @@ module.exports = {
 				}
 
 				const data = await uniswapV2Reserves(defaults.network.address.vaderEthUniV2Pool)
-				const r0 = await utils.formatUnits(data[0], 18)
-				const r1 = await utils.formatUnits(data[1], 18)
+				const r0 = utils.formatUnits(data[0], 18)
+				const r1 = utils.formatUnits(data[1], 18)
 				const t = (Number(r0) * Number(uniswapV2Market.vader.usdc) + (Number(r1) * Number(uniswapV2Market.weth.usdc)))
 
 				const announce = `
-				<:uniswap:718587420274196553> Uniswap V2 pool *$VADER* **${await prettifyNumber(r0, 0, 5)}** *Ξ* **${await prettifyNumber(r1, 0, 5)}** has total **$${await prettifyNumber(t, 0, 2)}**
+				<:uniswap:718587420274196553> Uniswap V2 pool *$VADER* **${prettifyNumber(r0, 0, 5)}** *Ξ* **${prettifyNumber(r1, 0, 5)}** has total **$${prettifyNumber(t, 0, 2)}**
 				`
 
 				if(announce) {

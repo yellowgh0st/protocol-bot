@@ -1,4 +1,4 @@
-module.exports = async (amount, minFractionDigits = 0, maxFractionDigits = 0, locales = 'en-US') => {
+module.exports = (amount, minFractionDigits = 0, maxFractionDigits = 0, locales = 'en-US') => {
 	const options = {
 		minimumFractionDigits: minFractionDigits,
 		maximumFractionDigits: maxFractionDigits,
