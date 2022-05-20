@@ -34,7 +34,7 @@ module.exports = {
             uAmount < 1 ? 18 : 5
           );
           announces.push(
-            `<:vaderfire:908728100651675719> New Mint **${prettyVAmount} <:vadersymbolwring:914298664741130240>** burnt :twisted_rightwards_arrows: **${prettyUAmount}<:usdvsymbolwring:914298664942465084>** minted`
+            `<:vaderfire:908728100651675719> New Mint **${prettyVAmount} <:VADER:976952650618769479>** burnt :twisted_rightwards_arrows: **${prettyUAmount}<:USDV:976952697636929596>** minted`
           );
         }
         if (
@@ -56,7 +56,7 @@ module.exports = {
             uAmount < 1 ? 18 : 5
           );
           announces.push(
-            `<:vaderfire:908728100651675719> New Mint **${prettyUAmount} <:usdvsymbolwring:914298664942465084>** burnt :twisted_rightwards_arrows: **${prettyVAmount}<:vadersymbolwring:914298664741130240>** minted`
+            `<:vaderfire:908728100651675719> New Mint **${prettyUAmount} <:USDV:976952697636929596>** burnt :twisted_rightwards_arrows: **${prettyVAmount}<:VADER:976952650618769479>** minted`
           );
         }
 
